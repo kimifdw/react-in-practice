@@ -36,6 +36,8 @@ function beforeUpload (file) {
 class Profile extends React.Component {
   constructor (props) {
     super(props)
+    this.handleChange = this.handleChange.bind(this)
+    this.onSubmit = this.onSubmit.bind(this)
     this.state = { isLoading: false }
   }
   handleChange (info) {
@@ -69,8 +71,8 @@ class Profile extends React.Component {
     const { form: { getFieldDecorator } } = this.props
     const { isLoading, imageUrl } = this.state
     return (
-      <Card title='Edit Your Profile1'>
-        <Form onSubmit={e => this.onSubmit(e)}>
+      <Card title='Edit Your Profile'>
+        <Form onSubmit={this.onSubmit}>
           <FormItem {...formItemLayout} label='Full Name'>
             {
               getFieldDecorator('fullName', { initialValue: 'XueSeason' })(<Input />)
@@ -103,7 +105,7 @@ class Profile extends React.Component {
                   showUploadList={false}
                   // action='//jsonplaceholder.typicode.com/posts/'
                   beforeUpload={beforeUpload}
-                  onChange={e => this.handleChange(e)}
+                  onChange={this.handleChange}
                 >
                   {imageUrl ? <img src={imageUrl} alt='avatar' /> : <UploadButton isLoading={isLoading} />}
                 </Upload>

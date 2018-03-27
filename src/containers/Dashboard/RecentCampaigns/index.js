@@ -4,22 +4,22 @@ import { Card, List, Avatar } from 'antd'
 const data = [
   {
     name: 'Ant Design Title 1',
-    description: 'Ant Design, a design language for background applications, is refined by Ant UED Team',
+    description: 'Ant Design, a design language for background applications',
     avatar: 'https://skreem.s3.amazonaws.com/campaigns/156/small_vivavideo-15c81017.jpg'
   },
   {
     name: 'Ant Design Title 2',
-    description: 'Ant Design, a design language for background applications, is refined by Ant UED Team',
+    description: 'Ant Design, a design language for background applications',
     avatar: 'https://skreem.s3.amazonaws.com/campaigns/156/small_vivavideo-15c81017.jpg'
   },
   {
     name: 'Ant Design Title 3',
-    description: 'Ant Design, a design language for background applications, is refined by Ant UED Team',
+    description: 'Ant Design, a design language for background applications',
     avatar: 'https://skreem.s3.amazonaws.com/campaigns/156/small_vivavideo-15c81017.jpg'
   },
   {
     name: 'Ant Design Title 4',
-    description: 'Ant Design, a design language for background applications, is refined by Ant UED Team',
+    description: 'Ant Design, a design language for background applications',
     avatar: 'https://skreem.s3.amazonaws.com/campaigns/156/small_vivavideo-15c81017.jpg'
   }
 ]

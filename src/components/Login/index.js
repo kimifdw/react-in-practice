@@ -5,7 +5,11 @@ import styles from './style.less'
 
 const FormItem = Form.Item
 
-class Login extends React.PureComponent {
+class Login extends React.Component {
+  constructor (props) {
+    super(props)
+    this.onSubmit = this.onSubmit.bind(this)
+  }
   onSubmit (e) {
     e.preventDefault()
     this.props.form.validateFields((err, values) => {
@@ -18,7 +22,7 @@ class Login extends React.PureComponent {
     const { getFieldDecorator } = this.props.form
     return (
       <div className={styles['login-container']}>
-        <Form onSubmit={e => this.onSubmit(e)} className={styles['login-form']}>
+        <Form onSubmit={this.onSubmit} className={styles['login-form']}>
           <FormItem>
             {getFieldDecorator('username', {
               rules: [{ required: true, message: '请输入用户名' }]

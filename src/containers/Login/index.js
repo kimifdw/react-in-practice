@@ -5,7 +5,11 @@ import { Redirect, withRouter } from 'react-router-dom'
 import LoginFrom from '../../components/Login'
 import { loginRequest } from '../../store/actions'
 
-class Login extends React.PureComponent {
+class Login extends React.Component {
+  constructor (props) {
+    super(props)
+    this.onSubmit = this.onSubmit.bind(this)
+  }
   onSubmit (values) {
     const { username, password, remember } = values
     if (remember) {}
@@ -21,7 +25,7 @@ class Login extends React.PureComponent {
     } else {
       return (
         <Spin tip='登录中' spinning={this.props.isFetching}>
-          <LoginFrom onSubmit={values => this.onSubmit(values)} />
+          <LoginFrom onSubmit={this.onSubmit} />
         </Spin>
       )
     }

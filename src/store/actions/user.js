@@ -5,22 +5,20 @@ import {
   LOGOUT
 } from '../types'
 
-const defaultState = { isFetching: false, fullName: null, email: null, phoneNumber: null, avatar: null }
-
 const { loginRequest, loginFailure, loginSuccess } = createActions({
-  [LOGIN_REQUEST]: (username, password) => ({ username, password, isFetching: true }),
-  [LOGIN_FAILURE]: () => ({ ...defaultState }),
-  [LOGIN_SUCCESS]: (payload) => ({ ...payload, isFetching: false })
+  [LOGIN_REQUEST]: (username, password) => ({ username, password }),
+  [LOGIN_FAILURE]: undefined,
+  [LOGIN_SUCCESS]: payload => ({ ...payload })
 })
 
 const { updateProfileRequest, updateProfileFailure, updateProfileSuccess } = createActions({
-  [UPDATE_PROFILE_REQUEST]: () => ({ isFetching: true }),
-  [UPDATE_PROFILE_FAILURE]: () => ({ ...defaultState }),
-  [UPDATE_PROFILE_SUCCESS]: (payload) => ({ ...payload, isFetching: false })
+  [UPDATE_PROFILE_REQUEST]: payload => ({ ...payload }),
+  [UPDATE_PROFILE_FAILURE]: undefined,
+  [UPDATE_PROFILE_SUCCESS]: payload => ({ ...payload })
 })
 
 const logout = createAction(LOGOUT, () => {
-  return { ...defaultState }
+  return { fullName: null, email: null, phoneNumber: null, avatar: null }
 })
 
 export {

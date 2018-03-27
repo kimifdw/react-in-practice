@@ -5,7 +5,14 @@ import {
   // LOGOUT
 } from '../types'
 
-const defaultState = { isFetching: false, fullName: null, email: null, phoneNumber: null, avatar: null, isAuthenticated: false }
+const defaultState = {
+  isFetching: false,
+  fullName: null,
+  email: null,
+  phoneNumber: null,
+  avatar: null,
+  isAuthenticated: false
+}
 
 const reducer = handleActions({
   [LOGIN_REQUEST] (state) {

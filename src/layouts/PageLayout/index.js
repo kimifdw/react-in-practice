@@ -7,6 +7,7 @@ import ContentLayout from './ContentLayout'
 class PageLayout extends React.Component {
   constructor (props) {
     super(props)
+    this.toggle = this.toggle.bind(this)
     this.state = { collapsed: false }
   }
   toggle () {
@@ -17,9 +18,9 @@ class PageLayout extends React.Component {
   render () {
     return (
       <Layout hasSider>
-        <MenuLayout collapsed={this.state.collapsed} toggle={() => this.toggle()} />
+        <MenuLayout collapsed={this.state.collapsed} toggle={this.toggle} />
         <Layout>
-          <HeaderLayout collapsed={this.state.collapsed} toggle={() => this.toggle()} />
+          <HeaderLayout collapsed={this.state.collapsed} toggle={this.toggle} />
           <ContentLayout />
         </Layout>
       </Layout>

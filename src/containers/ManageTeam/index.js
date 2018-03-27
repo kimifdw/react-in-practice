@@ -4,9 +4,9 @@ import styles from './style.less'
 
 const memberData = [{
   key: '0',
-  name: 'Anita',
-  email: 'anita@quvideo.com',
-  avatar: 'http://brands.skreem.io/assets/logo-watermark-app-755f7d87e97524d63a556e49f5828a7b92237a17a5bce6ba6c09319080fd5eb7.jpg',
+  name: 'Season',
+  email: 'jijie.xue@quvideo.com',
+  avatar: 'https://skreem.s3.amazonaws.com/brands/53/small_vivavideo-d1890bc1.png',
   role: 'Admin',
   brands: 'All'
 }]

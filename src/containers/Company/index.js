@@ -43,6 +43,8 @@ const radioStyle = {
 class Company extends React.Component {
   constructor (props) {
     super(props)
+    this.handleChange = this.handleChange.bind(this)
+    this.onSubmit = this.onSubmit.bind(this)
     this.state = { isLoading: false }
   }
   handleChange (info) {
@@ -67,7 +69,7 @@ class Company extends React.Component {
     return (
       <Card title='Edit Company Details'>
         <Alert message='This information is used for billing and invoice purposes.' type='info' showIcon />
-        <Form onSubmit={e => this.onSubmit(e)} style={{ marginTop: 18 }}>
+        <Form onSubmit={this.onSubmit} style={{ marginTop: 18 }}>
           <Divider />
           <FormItem
             {...formItemLayout}
@@ -108,7 +110,7 @@ class Company extends React.Component {
                   showUploadList={false}
                   // action='//jsonplaceholder.typicode.com/posts/'
                   beforeUpload={beforeUpload}
-                  onChange={e => this.handleChange(e)}
+                  onChange={this.handleChange}
                 >
                   {imageUrl ? <img src={imageUrl} alt='logo' /> : <UploadButton isLoading={isLoading} />}
                 </Upload>

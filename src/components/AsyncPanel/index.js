@@ -5,6 +5,8 @@ class AsyncPanel extends React.Component {
   constructor (props) {
     super(props)
     this.state = { isLoading: true, Host: null }
+  }
+  componentWillMount () {
     this.loadComponent(this.props.importer)
   }
   async loadComponent (importer) {

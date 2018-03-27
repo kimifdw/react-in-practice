@@ -18,6 +18,9 @@ const formItemLayout = {
 class Notifications extends React.Component {
   constructor (props) {
     super(props)
+    this.onSubmit = this.onSubmit.bind(this)
+    this.onChange = this.onChange.bind(this)
+    this.onCheckboxChange = this.onCheckboxChange.bind(this)
     this.state = { disableAll: false }
   }
   onSubmit (e) {
@@ -50,10 +53,10 @@ class Notifications extends React.Component {
     const { getFieldDecorator } = this.props.form
     return (
       <Card title='Edit Notification Settings'>
-        <Form onSubmit={e => this.onSubmit(e)}>
+        <Form onSubmit={this.onSubmit}>
           <FormItem {...formItemLayout} label='settings'>
             {
-              getFieldDecorator('settings', { onChange: values => this.onCheckboxChange(values) })(
+              getFieldDecorator('settings', { onChange: this.onCheckboxChange })(
                 <CheckboxGroup>
                   <div>
                     <Checkbox value='0'>Receive email when an influencer participates in a campaign.</Checkbox>
@@ -70,7 +73,7 @@ class Notifications extends React.Component {
           </FormItem>
           <Divider />
           <FormItem {...formItemLayout} label='or'>
-            <Checkbox onChange={e => this.onChange(e)} checked={this.state.disableAll}>Disable all</Checkbox>
+            <Checkbox onChange={this.onChange} checked={this.state.disableAll}>Disable all</Checkbox>
           </FormItem>
           <FormItem wrapperCol={{ span: 12, offset: 4 }}>
             <Button type='primary' htmlType='submit'>Update</Button>

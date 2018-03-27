@@ -11,7 +11,7 @@ import TopInfluencers from './TopInfluencers'
 function Dashboard () {
   return (
     <div>
-      <Header title={'Dashboard'} description={'Welcome to Skreem Platform!'} />
+      <Header title={'Dashboard'} description={'Welcome to Viva Ad Platform!'} />
       <div style={{ margin: '8px' }}>
         <Row gutter={8}>
           <Col span={10}>

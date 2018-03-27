@@ -6,9 +6,17 @@ import configStore from './store'
 
 import Router from './router'
 
-ReactDOM.render(
+const App = () => (
   <Provider store={configStore()}>
     <Router />
-  </Provider>,
+  </Provider>
+)
+
+ReactDOM.render(
+  <App />,
   document.getElementById('app')
 )
+
+if (module.hot) {
+  module.hot.accept()
+}
